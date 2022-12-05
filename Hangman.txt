@@ -1,0 +1,1499 @@
+import React, { Component } from 'react';
+import { AppRegistry, Text, View, StyleSheet, Image, TextInput, ImageBackground, TouchableHighlight, Alert, Dimensions, ScrollView } from 'react-native';
+import Constants from 'expo-constants';
+
+let deviceHeight = Dimensions.get('window').height;
+let deviceWidth = Dimensions.get('window').width;
+
+export default class App extends Component {
+    
+    
+    state = {
+         welcomePageDisplay: 'block',
+        playPageDisplay: 'none',
+        inputValue: "Enter guess here",
+        image: 'https://codehs.com/uploads/c944c42f5cd25b3e3d1a39afeaa881b7',
+        word: 'venice',
+        count: 0,
+        countm: 0,
+        a: '__',
+        b: '__',
+        c: '__',
+        d: '__',
+        e: '__',
+        f: '__',
+        message: '',
+        randomNumber : Math.floor(Math.random() * 20) + 1,
+        
+    }
+    
+    handleWelcomePagePress = () => this.setState(state => ({
+        welcomePageDisplay: 'block',
+        playPageDisplay: 'none',
+        
+    }));
+    
+    // When Info Page button is pressed, hide Welcome page and show Info page
+    handlePlayPagePress = () => this.setState(state => ({
+        welcomePageDisplay: 'none',
+        playPageDisplay: 'block',
+        
+    }));
+    
+    chooseRandCity = () => {
+            this.setState({ 
+                a: '__',
+                b: '__',
+                c: '__',
+                d: '__',
+                e: '__',
+                f: '__',
+                count: 0,
+                countm:0,
+                image: 'https://codehs.com/uploads/c944c42f5cd25b3e3d1a39afeaa881b7',
+            })
+        
+            if (this.state.randomCity == 1) {
+                this.setState({ 
+                    word: 'dublin',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 2){
+                this.setState({ 
+                    word: 'berlin',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 3){
+                this.setState({ 
+                    word: 'zurich',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 4){
+                this.setState({ 
+                    word: 'lisbon',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 5){
+                this.setState({ 
+                    word: 'puebla',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 6){
+                this.setState({ 
+                    word: 'madrid',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 7){
+                this.setState({ 
+                    word: 'london',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 8){
+                this.setState({ 
+                    word: 'sydney',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 9){
+                this.setState({ 
+                    word: 'warsaw',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 10){
+                this.setState({ 
+                    word: 'vienna',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 11){
+                this.setState({ 
+                    word: 'austin',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 12){
+                this.setState({ 
+                    word: 'prague',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 13){
+                this.setState({ 
+                    word: 'albany',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 14){
+                this.setState({ 
+                    word: 'mumbai',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 15){
+                this.setState({ 
+                    word: 'oxford',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 16){
+                this.setState({ 
+                    word: 'geneva',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 17){
+                this.setState({ 
+                    word: 'bogota',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 18){
+                this.setState({ 
+                    word: 'boston',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 19){
+                this.setState({ 
+                    word: 'athens',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 20){
+                this.setState({ 
+                    word: 'naples',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            }
+                
+        
+   
+    }
+    chooseRandFood = () => {
+            this.setState({ 
+                a: '__',
+                b: '__',
+                c: '__',
+                d: '__',
+                e: '__',
+                f: '__',
+                count: 0,
+                countm:0,
+                image: 'https://codehs.com/uploads/c944c42f5cd25b3e3d1a39afeaa881b7',
+            })
+        
+            if (this.state.randomNumber == 1) {
+                this.setState({ 
+                    word: 'almond',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 2){
+                this.setState({ 
+                    word: 'banana',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 3){
+                this.setState({ 
+                    word: 'carrot',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 4){
+                this.setState({ 
+                    word: 'cheese',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 5){
+                this.setState({ 
+                    word: 'coffee',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 6){
+                this.setState({ 
+                    word: 'cookie',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 7){
+                this.setState({ 
+                    word: 'garlic',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 8){
+                this.setState({ 
+                    word: 'muffin',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 9){
+                this.setState({ 
+                    word: 'pastry',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 10){
+                this.setState({ 
+                    word: 'potato',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 11){
+                this.setState({ 
+                    word: 'radish',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 12){
+                this.setState({ 
+                    word: 'yogurt',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 13){
+                this.setState({ 
+                    word: 'omelet',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 14){
+                this.setState({ 
+                    word: 'oyster',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 15){
+                this.setState({ 
+                    word: 'cherry',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 16){
+                this.setState({ 
+                    word: 'orange',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 17){
+                this.setState({ 
+                    word: 'bogota',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 18){
+                this.setState({ 
+                    word: 'boston',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 19){
+                this.setState({ 
+                    word: 'athens',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            } else if (this.state.randomNumber == 20){
+                this.setState({ 
+                    word: 'naples',
+                    randomNumber : Math.floor(Math.random() * 20) + 1,
+                })
+            }
+                
+        
+   
+    }
+    clear = () => {
+            this.setState({ 
+                a: '__',
+                b: '__',
+                c: '__',
+                d: '__',
+                e: '__',
+                f: '__',
+                count: 0,
+                countm:0,
+                image: 'https://codehs.com/uploads/c944c42f5cd25b3e3d1a39afeaa881b7',
+            })
+                
+        
+   
+    }
+
+    _handleTextChange = inputValue => {
+        this.setState({ inputValue });
+    };
+    
+    guess = () => {
+        
+        if (this.state.word.includes(this.state.inputValue) && this.state.count == 0) {
+           
+            if ((this.state.word.indexOf(this.state.inputValue) == 0)) {
+                 this.setState({ 
+                                    a: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 1) == 1)) {
+                            
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    b: this.state.inputValue,
+                                    
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 2)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 3)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 4)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 5)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 1)) {
+                this.setState({ 
+                                    b: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                                if ((this.state.word.indexOf(this.state.inputValue, 2) == 2)) {
+                            
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 3)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 4)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 5)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 2)) {
+                 this.setState({ 
+                                    c: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 3) == 3)) {
+                            
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 4)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 5)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 3)) {
+                this.setState({ 
+                                    d: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 4) == 4)) {
+                            
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 4) == 5)) {
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 4)) {
+                this.setState({ 
+                                    
+                                    e: this.state.inputValue,
+                                    count: this.state.count+1
+                                })
+                if ((this.state.word.indexOf(this.state.inputValue, 5) == 5)) {
+                            
+                                this.setState({ 
+                                    e: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            
+                            
+                            } 
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 5)) {
+                this.setState({ 
+                    f: this.state.inputValue,
+                    count: this.state.count+1
+                })
+            }
+        } else if (!this.state.word.includes(this.state.inputValue) && this.state.countm == 0) {
+            this.setState({ 
+                    image: 'https://codehs.com/uploads/89af1eb708699c724420129d408860bf',
+                    countm: this.state.countm+1
+                })
+        
+        } else if ((this.state.word.includes(this.state.inputValue) && this.state.count == 1)) {
+            if ((this.state.word.indexOf(this.state.inputValue) == 0)) {
+                 this.setState({ 
+                                    a: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 1) == 1)) {
+                            
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    b: this.state.inputValue,
+                                    
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 2)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 3)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 4)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 5)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 1)) {
+                this.setState({ 
+                                    b: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                                if ((this.state.word.indexOf(this.state.inputValue, 2) == 2)) {
+                            
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 3)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 4)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 5)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 2)) {
+                 this.setState({ 
+                                    c: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 3) == 3)) {
+                            
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 4)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 5)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 3)) {
+                this.setState({ 
+                                    d: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 4) == 4)) {
+                            
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 4) == 5)) {
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 4)) {
+                this.setState({ 
+                                    
+                                    e: this.state.inputValue,
+                                    count: this.state.count+1
+                                })
+                if ((this.state.word.indexOf(this.state.inputValue, 5) == 5)) {
+                            
+                                this.setState({ 
+                                    e: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            
+                            
+                            } 
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 5)) {
+                this.setState({ 
+                    f: this.state.inputValue,
+                    count: this.state.count+1
+                })
+            }
+        } else if (!this.state.word.includes(this.state.inputValue) && this.state.countm == 1) {
+            this.setState({ 
+                    image: 'https://codehs.com/uploads/8b432df9357282c797302d09dcaf423d',
+                    countm: this.state.countm+1
+                })
+        } else if ((this.state.word.includes(this.state.inputValue) && this.state.count == 2)) {
+            if ((this.state.word.indexOf(this.state.inputValue) == 0)) {
+                 this.setState({ 
+                                    a: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 1) == 1)) {
+                            
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    b: this.state.inputValue,
+                                    
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 2)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 3)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 4)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 5)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 1)) {
+                this.setState({ 
+                                    b: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                                if ((this.state.word.indexOf(this.state.inputValue, 2) == 2)) {
+                            
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 3)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 4)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 5)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 2)) {
+                 this.setState({ 
+                                    c: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 3) == 3)) {
+                            
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 4)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 5)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 3)) {
+                this.setState({ 
+                                    d: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 4) == 4)) {
+                            
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 4) == 5)) {
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 4)) {
+                this.setState({ 
+                                    
+                                    e: this.state.inputValue,
+                                    count: this.state.count+1
+                                })
+                if ((this.state.word.indexOf(this.state.inputValue, 5) == 5)) {
+                            
+                                this.setState({ 
+                                    e: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            
+                            
+                            } 
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 5)) {
+                this.setState({ 
+                    f: this.state.inputValue,
+                    count: this.state.count+1
+                })
+            }
+        } else if (!this.state.word.includes(this.state.inputValue) && this.state.countm == 2) {
+            this.setState({ 
+                    image: 'https://codehs.com/uploads/d02e50b4ad8d0b3d92780c2d9872ade1',
+                    countm: this.state.countm+1
+                })
+        } else if ((this.state.word.includes(this.state.inputValue) && this.state.count == 3)) {
+            if ((this.state.word.indexOf(this.state.inputValue) == 0)) {
+                 this.setState({ 
+                                    a: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 1) == 1)) {
+                            
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    b: this.state.inputValue,
+                                    
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 2)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 3)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 4)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 5)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 1)) {
+                this.setState({ 
+                                    b: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                                if ((this.state.word.indexOf(this.state.inputValue, 2) == 2)) {
+                            
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 3)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 4)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 5)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 2)) {
+                 this.setState({ 
+                                    c: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 3) == 3)) {
+                            
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 4)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 5)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 3)) {
+                this.setState({ 
+                                    d: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 4) == 4)) {
+                            
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 4) == 5)) {
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 4)) {
+                this.setState({ 
+                                    
+                                    e: this.state.inputValue,
+                                    count: this.state.count+1
+                                })
+                if ((this.state.word.indexOf(this.state.inputValue, 5) == 5)) {
+                            
+                                this.setState({ 
+                                    e: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            
+                            
+                            } 
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 5)) {
+                this.setState({ 
+                    f: this.state.inputValue,
+                    count: this.state.count+1
+                })
+            }
+        } else if (!this.state.word.includes(this.state.inputValue) && this.state.countm == 3) {
+            this.setState({ 
+                    image: 'https://codehs.com/uploads/0eba1c6dc0c61315d617a80ea38dd236',
+                    countm: this.state.countm+1
+                })
+        } else if ((this.state.word.includes(this.state.inputValue) && this.state.count == 4)) {
+            if ((this.state.word.indexOf(this.state.inputValue) == 0)) {
+                 this.setState({ 
+                                    a: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 1) == 1)) {
+                            
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    b: this.state.inputValue,
+                                    
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 2)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 3)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 4)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 5)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 1)) {
+                this.setState({ 
+                                    b: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                                if ((this.state.word.indexOf(this.state.inputValue, 2) == 2)) {
+                            
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 3)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 4)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 5)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 2)) {
+                 this.setState({ 
+                                    c: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 3) == 3)) {
+                            
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 4)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 5)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 3)) {
+                this.setState({ 
+                                    d: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 4) == 4)) {
+                            
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 4) == 5)) {
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 4)) {
+                this.setState({ 
+                                    
+                                    e: this.state.inputValue,
+                                    count: this.state.count+1
+                                })
+                if ((this.state.word.indexOf(this.state.inputValue, 5) == 5)) {
+                            
+                                this.setState({ 
+                                    e: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            
+                            
+                            } 
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 5)) {
+                this.setState({ 
+                    f: this.state.inputValue,
+                    count: this.state.count+1
+                })
+            }
+        } else if (!this.state.word.includes(this.state.inputValue) && this.state.countm == 4) {
+            this.setState({ 
+                    image: 'https://codehs.com/uploads/89f443886b2fbbac174a2645cec2c75e',
+                    countm: this.state.countm+1
+                })
+        } else if ((this.state.word.includes(this.state.inputValue) && this.state.count == 5)) {
+            if ((this.state.word.indexOf(this.state.inputValue) == 0)) {
+                 this.setState({ 
+                                    a: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 1) == 1)) {
+                            
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    b: this.state.inputValue,
+                                    
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 2)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 3)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 4)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 5)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 1)) {
+                this.setState({ 
+                                    b: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                                if ((this.state.word.indexOf(this.state.inputValue, 2) == 2)) {
+                            
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 3)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 4)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 5)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 2)) {
+                 this.setState({ 
+                                    c: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 3) == 3)) {
+                            
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 4)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 5)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 3)) {
+                this.setState({ 
+                                    d: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 4) == 4)) {
+                            
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 4) == 5)) {
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 4)) {
+                this.setState({ 
+                                    
+                                    e: this.state.inputValue,
+                                    count: this.state.count+1
+                                })
+                if ((this.state.word.indexOf(this.state.inputValue, 5) == 5)) {
+                            
+                                this.setState({ 
+                                    e: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            
+                            
+                            } 
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 5)) {
+                this.setState({ 
+                    f: this.state.inputValue,
+                    count: this.state.count+1
+                })
+            }
+        } else if (!this.state.word.includes(this.state.inputValue) && this.state.countm == 5) {
+            this.setState({ 
+                    image: 'https://codehs.com/uploads/7510deb70607288de251cd3886540a6e',
+                    countm: this.state.countm+1,
+                    message: 'You Lose, the word was: ' + this.state.word,
+                })
+        } else if ((this.state.word.includes(this.state.inputValue) && this.state.count == 6)) {
+            if ((this.state.word.indexOf(this.state.inputValue) == 0)) {
+                 this.setState({ 
+                                    a: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 1) == 1)) {
+                            
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    b: this.state.inputValue,
+                                    
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 2)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 3)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 4)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 1) == 5)) {
+                                this.setState({ 
+                                    a: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 1)) {
+                this.setState({ 
+                                    b: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                                if ((this.state.word.indexOf(this.state.inputValue, 2) == 2)) {
+                            
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    c: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 3)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 4)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 2) == 5)) {
+                                this.setState({ 
+                                    b: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 2)) {
+                 this.setState({ 
+                                    c: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 3) == 3)) {
+                            
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    d: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 4)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 3) == 5)) {
+                                this.setState({ 
+                                    c: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 3)) {
+                this.setState({ 
+                                    d: this.state.inputValue,
+                                    
+                                    count: this.state.count+1
+                                })
+                            if ((this.state.word.indexOf(this.state.inputValue, 4) == 4)) {
+                            
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    e: this.state.inputValue,
+                                })
+                            
+                            
+                            } else if ((this.state.word.indexOf(this.state.inputValue, 4) == 5)) {
+                                this.setState({ 
+                                    d: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            }
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 4)) {
+                this.setState({ 
+                                    
+                                    e: this.state.inputValue,
+                                    count: this.state.count+1
+                                })
+                if ((this.state.word.indexOf(this.state.inputValue, 5) == 5)) {
+                            
+                                this.setState({ 
+                                    e: this.state.inputValue,
+                                    f: this.state.inputValue,
+                                })
+                            
+                            
+                            } 
+            } else if ((this.state.word.indexOf(this.state.inputValue) == 5)) {
+                this.setState({ 
+                    f: this.state.inputValue,
+                    count: this.state.count+1,
+                    message: 'You Win'
+                })
+            }
+        } else if (!this.state.word.includes(this.state.inputValue) && this.state.countm == 6) {
+            this.setState({ 
+                    image: 'https://codehs.com/uploads/7510deb70607288de251cd3886540a6e',
+                    countm: this.state.countm+1,
+                    message: 'You Lose, the word was: ' + this.state.word,
+                })
+        }
+            
+        
+            
+        } 
+
+            
+            
+            
+        
+    
+    
+    
+   
+    render() {
+        return (
+           
+                <ImageBackground
+                    style={styles.background}
+                    source={{ uri: 'data:image/jpeg;base64,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' }}
+                >
+               
+                
+                 <View style={styles.cc}>
+                 
+                  <Text style={styles.paragraph}>
+                            Hangman
+                        </Text>
+                    </View>
+                        
+                    <View style={styles.container}>
+                    
+                    <Image
+                    source={this.state.image}
+                    style={{ height: 172, width: 108 }}
+                ></Image>
+                
+                <View style={styles.navbarContainer}>
+                
+                    <View style={styles.navButton}>
+                        <Text style={styles.navButtonText}>
+                            {this.state.a}
+                        </Text>
+                    </View>
+                    <View style={styles.navButton}>
+                        <Text style={styles.navButtonText}>
+                            {this.state.b}
+                        </Text>
+                    </View>
+                    <View style={styles.navButton}>
+                        <Text style={styles.navButtonText}>
+                            {this.state.c}
+                        </Text>
+                    </View>
+                    <View style={styles.navButton}>
+                        <Text style={styles.navButtonText}>
+                            {this.state.d}
+                        </Text>
+                    </View>
+                    <View style={styles.navButton}>
+                        <Text style={styles.navButtonText}>
+                            {this.state.e}
+                        </Text>
+                    </View>
+                    <View style={styles.navButton}>
+                        <Text style={styles.navButtonText}>
+                            {this.state.f}
+                        </Text>
+                    </View>
+                      
+                </View>
+                <Text style={styles.pparagraph}>
+                    {this.state.message}
+                </Text>
+                    
+                    
+                     <TextInput style={styles.textInput}
+                    onChangeText={(inputValue) => this.setState({inputValue})}
+                    value={this.state.inputValue}
+                    multiline = {true}
+                />
+                 <View style={styles.ccc}>
+                <TouchableHighlight
+                    onPress = {this.guess}
+                >
+                    <View style={styles.redButton}>
+                        <Text style={styles.buttonText}>
+                            Guess
+                        </Text>
+                    </View>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                    onPress = {this.clear}
+                >
+                    <View style={styles.greenButton}>
+                        <Text style={styles.buttonText}>
+                            Clear
+                        </Text>
+                    </View>
+                </TouchableHighlight>
+                </View>
+                <View style={styles.ccc}>
+                
+                <TouchableHighlight
+                    onPress = {this.chooseRandFood}
+                >
+                    <View style={styles.blueButton}>
+                        <Text style={styles.buttonText}>
+                            Random Food
+                        </Text>
+                    </View>
+                </TouchableHighlight>
+                 <TouchableHighlight
+                    onPress = {this.chooseRandCity}
+                >
+                    <View style={styles.blueButton}>
+                        <Text style={styles.buttonText}>
+                            Random Location
+                        </Text>
+                    </View>
+                </TouchableHighlight>
+                </View>
+                 </View>
+                    
+                </ImageBackground>
+           
+        );
+    <View style={styles.navbarContainer}>
+                
+                    <TouchableHighlight style={styles.navButton}
+                    onPress={this.handleWelcomePagePress}
+                    >
+                        <Text style={styles.navButtonText}>
+                            Home
+                        </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight style={styles.navButton}
+                    onPress={this.handleTipPagePress}
+                    >
+                        <Text style={styles.navButtonText}>
+                            Tip Calculator
+                        </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight style={styles.navButton}
+                    onPress={this.handleCurPagePress}
+                    >
+                        <Text style={styles.navButtonText}>
+                           Currency Converter
+                        </Text>
+                    </TouchableHighlight>
+                </View>
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+         justifyContent: 'center',
+        alignItems: 'center',
+    },
+    cc: {
+        flex: 1,
+         justifyContent: 'center',
+        alignItems: 'center',
+    },
+     ccc: {
+        flex: 1,
+         justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+    },
+    background: {
+        height: deviceHeight,
+        width: deviceWidth,
+         
+       
+    },
+    
+    
+    
+    textInput: {
+        height: 50,
+        width: 150,
+        borderWidth: 1,
+        color: 'blue',
+        fontSize: 20,
+        marginTop: 30,
+        marginBottom: 10,
+        
+                
+        backgroundColor: 'white',
+    },
+     redButton: {
+        backgroundColor: 'red',
+        height: 50,
+        width: 125,
+        margin: 10,
+        justifyContent: 'center',
+    },
+     blueButton: {
+        backgroundColor: 'blue',
+        height: 50,
+        width: 125,
+        margin: 10,
+        justifyContent: 'center',
+    },
+    greenButton: {
+        backgroundColor: 'green',
+        height: 50,
+        width: 125,
+        margin: 10,
+        justifyContent: 'center',
+    },
+    
+    buttonText: {
+        color: 'white',
+        fontSize: 20,
+        textAlign: 'center',
+    },
+    paragraph: {
+        fontSize: 40,
+        textAlign: 'center',
+        fontFamily: 'futura',
+    },
+    pparagraph: {
+        fontSize: 20,
+        textAlign: 'center',
+        fontFamily: 'futura',
+    },
+    navbarContainer: {
+        
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        
+    },
+    navButton: {
+        height: deviceHeight/14,
+        width: deviceWidth/8,
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 7,
+    },
+    navButtonText: {
+        fontSize: deviceHeight/20,
+        textAlign: 'center',
+        color: 'black',
+    },
+});
